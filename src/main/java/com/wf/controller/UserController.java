@@ -17,7 +17,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping(value = "/user")
-@Api(tags = "BookController", description = "BookController | 用户管理模块",value = "测试")
+@Api(tags = "PersonController", description = "PersonController | 用户管理模块",value = "测试")
 public class UserController {
 
     @Autowired
@@ -33,7 +33,7 @@ public class UserController {
 
     @ApiOperation(value = "根据用户名查询用户列表信息", notes = "查询数据库中为此名的用户信息")
     @RequestMapping(value = "/get/users/{name}" ,method = RequestMethod.GET)
-    public List<Person> getUsers(@ApiParam(name="name",value="用户名",required=true) String name){
+    public List<Person> getUsers(@ApiParam(name="name",value="用户名",required=true)@PathVariable String name){
         List<Person> persons = userService.getUserByName(name);
         return persons;
     }
