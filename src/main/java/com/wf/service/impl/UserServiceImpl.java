@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Mr_WF on 2018/4/21.
@@ -35,5 +36,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public void delete(Person person) {
         userRepository.delete(person);
+    }
+
+    @Override
+    public List<Map<String, Object>> getDatas() {
+        return null;
     }
 }
